@@ -14,3 +14,12 @@ input_loop:
     li $v0, 4
     la $a0, prompt
     syscall
+
+ # Read integer from user
+    li $v0, 5
+    syscall
+    move $t0, $v0 # Store N in $t0
+    
+    # Check if N >= 22
+    li $t1, 22
+    bge $t0, $t1, valid_input
