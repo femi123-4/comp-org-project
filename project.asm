@@ -23,3 +23,11 @@ input_loop:
     # Check if N >= 22
     li $t1, 22
     bge $t0, $t1, valid_input
+
+    # If N < 22, print error message
+    li $v0, 4
+    la $a0, error_msg
+    syscall
+    
+    # Jump back to input loop
+    j input_loop
